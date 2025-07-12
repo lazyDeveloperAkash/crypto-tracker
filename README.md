@@ -35,7 +35,7 @@ A full-stack cryptocurrency tracker built with MongoDB, Express.js, React.js, an
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 /client (React app)
 ├── src/
 │   ├── components/     # Reusable UI components
@@ -53,7 +53,7 @@ A full-stack cryptocurrency tracker built with MongoDB, Express.js, React.js, an
 ├── cron/            # Scheduled tasks
 ├── app.js           # Express app setup
 └── server.js        # Server entry point
-\`\`\`
+```
 
 ## 🚀 Setup Instructions
 
@@ -65,56 +65,56 @@ A full-stack cryptocurrency tracker built with MongoDB, Express.js, React.js, an
 ### Backend Setup
 
 1. **Navigate to server directory**
-   \`\`\`bash
+   ```bash
    cd server
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Environment Configuration**
    Create a `.env` file in the server directory:
-   \`\`\`env
+   ```env
    MONGODB_URI=mongodb://localhost:27017/crypto-tracker
    JWT_SECRET=your-super-secret-jwt-key-here
-   CLIENT_URL=http://localhost:3000
+   CLIENT_URL=http://localhost:5173
    PORT=5000
    NODE_ENV=development
-   \`\`\`
+   ```
 
 4. **Start the server**
-   \`\`\`bash
+   ```bash
    # Development mode
    npm run dev
    
    # Production mode
    npm start
-   \`\`\`
+   ```
 
 ### Frontend Setup
 
 1. **Navigate to client directory**
-   \`\`\`bash
+   ```bash
    cd client
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Environment Configuration**
    Create a `.env` file in the client directory:
-   \`\`\`env
+   ```env
    VITE_API_URL=http://localhost:5000
-   \`\`\`
+   ```
 
 4. **Start the development server**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 ### Database Setup
 
@@ -165,7 +165,7 @@ The application uses `node-cron` to automatically fetch cryptocurrency data:
 3. Set environment variables in Vercel dashboard
 4. Deploy automatically on push
 
-### Backend Deployment (Railway/Render)
+### Backend Deployment (Render)
 1. Push code to GitHub
 2. Connect repository to Railway/Render
 3. Set environment variables
@@ -179,7 +179,7 @@ The application uses `node-cron` to automatically fetch cryptocurrency data:
 ## 📸 Screenshots
 
 ### Sample MongoDB Data
-\`\`\`json
+```json
 // CurrentData Collection
 {
   "_id": "...",
@@ -208,131 +208,28 @@ The application uses `node-cron` to automatically fetch cryptocurrency data:
   "createdAt": "2024-01-15T10:30:00.000Z",
   "updatedAt": "2024-01-15T10:30:00.000Z"
 }
-\`\`\`
+```
 
 ### Cron Job Logs
-\`\`\`bash
+```bash
 2024-01-15T10:00:00.000Z - Running scheduled coin data fetch...
 2024-01-15T10:00:02.000Z - Fetched 10 coins from CoinGecko
 2024-01-15T10:00:03.000Z - Saved to history collection
 2024-01-15T10:00:04.000Z - Updated current data collection
-\`\`\`
+```
 
 ## 🔧 Environment Variables
 
 ### Server (.env)
-\`\`\`env
+```env
 MONGODB_URI=mongodb://localhost:27017/crypto-tracker
 JWT_SECRET=your-super-secret-jwt-key-here
-CLIENT_URL=http://localhost:3000
+CLIENT_URL=http://localhost:5173
 PORT=5000
 NODE_ENV=development
-\`\`\`
+```
 
 ### Client (.env)
-\`\`\`env
+```env
 VITE_API_URL=http://localhost:5000
-\`\`\`
-
-## 🧪 Testing
-
-### Manual Testing
-1. **Authentication Flow**
-   - Register new user
-   - Login with credentials
-   - Access protected dashboard
-   - Logout functionality
-
-2. **Dashboard Features**
-   - View cryptocurrency data
-   - Search functionality
-   - Sorting capabilities
-   - Chart visualization
-   - Auto-refresh behavior
-
-3. **API Testing** (using Postman/curl)
-   \`\`\`bash
-   # Health check
-   curl http://localhost:5000/api/health
-   
-   # Register user
-   curl -X POST http://localhost:5000/api/auth/register \
-     -H "Content-Type: application/json" \
-     -d '{"name":"Test User","email":"test@example.com","password":"password123"}'
-   \`\`\`
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-1. **MongoDB Connection Error**
-   - Ensure MongoDB is running
-   - Check connection string in `.env`
-   - Verify network access for MongoDB Atlas
-
-2. **CORS Issues**
-   - Verify `CLIENT_URL` in server `.env`
-   - Check CORS configuration in `app.js`
-
-3. **Authentication Problems**
-   - Clear browser cookies
-   - Check JWT secret configuration
-   - Verify cookie settings
-
-4. **API Rate Limiting**
-   - CoinGecko has rate limits
-   - Implement retry logic if needed
-   - Consider upgrading to CoinGecko Pro
-
-## 📈 Performance Optimizations
-
-1. **Database Indexing**
-   - Indexed `coinId` and `timestamp` in HistoryData
-   - Consider compound indexes for complex queries
-
-2. **Caching**
-   - Implement Redis for API response caching
-   - Cache frequently accessed data
-
-3. **Frontend Optimizations**
-   - Lazy loading for chart components
-   - Memoization for expensive calculations
-   - Virtual scrolling for large datasets
-
-## 🔮 Future Enhancements
-
-1. **Additional Features**
-   - Portfolio tracking
-   - Price alerts
-   - More chart types (candlestick, volume)
-   - Social sentiment analysis
-
-2. **Technical Improvements**
-   - WebSocket for real-time updates
-   - Progressive Web App (PWA)
-   - Server-side rendering (SSR)
-   - Microservices architecture
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📞 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Email: support@cryptotracker.com
-
----
-
-**Live Demo**: [Frontend URL] | **API Documentation**: [Backend URL/api]
-
-Built with ❤️ using the MERN Stack
+```
