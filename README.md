@@ -2,6 +2,16 @@
 
 A full-stack cryptocurrency tracker built with MongoDB, Express.js, React.js, and Node.js.
 
+### Frontend URL
+```
+https://crypto-tracker-one-wheat.vercel.app
+```
+
+### Backend URL
+```
+https://crypto-tracker-production-0683.up.railway.app
+```
+
 ## 🚀 Features
 
 ### Frontend (React + Tailwind CSS)
