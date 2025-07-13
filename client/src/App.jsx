@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import "./index.css"
 
 function App() {
+  //redeployee app
   return (
     <ThemeProvider>
       <AuthProvider>
